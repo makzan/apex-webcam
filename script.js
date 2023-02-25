@@ -55,8 +55,12 @@ takePicture.onclick = function (event) {
 
       $("#take-picture").hide();
       $("#app").hide();
-      $("#back-button").show();
+
       $("#show-picture").show();
+
+      setTimeout(() => {
+        $("#back-button").show();
+      }, 1500);
 
       // anchor.click();
 
