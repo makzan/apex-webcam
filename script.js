@@ -10,7 +10,7 @@ $("#show-picture").hide();
 let scale = 4
 
 let canvas = document.querySelector("#canvas");
-canvas.width = 320 * scale;
+canvas.width = 300 * scale;
 canvas.height = 568 * scale;
 var context = canvas.getContext('2d');
 
