@@ -104,3 +104,11 @@ navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
   debugLog(width);
   debugLog(height);
 });
+
+
+
+const isWeChat = () => /MicroMessenger/i.test(window.navigator.userAgent);
+if (isWeChat()) {
+    // button.style.display = "none";
+    document.querySelector("#wechat").style.display = "block";
+}
