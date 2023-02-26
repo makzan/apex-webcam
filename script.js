@@ -4,6 +4,8 @@ function debugLog(s){
   $(debug).append(`<p>${s}</p>`);
 }
 
+$("#wechat").hide();
+
 $("#back-button").hide();
 $("#show-picture").hide();
 
@@ -103,8 +105,10 @@ const constraints = {
 const isWeChat = () => /MicroMessenger/i.test(window.navigator.userAgent);
 if (isWeChat()) {
     // button.style.display = "none";
-    document.querySelector("#wechat").style.display = "block";
-    alert("Is WeChat");
+    $("#take-picture").hide();
+    // document.querySelector("#wechat").style.display = "block";
+    $("#wechat").show();
+
 } else {
   // Un-comment the following code with caution. It starts camera access right away.
   const video = document.querySelector('video#user-media');
