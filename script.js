@@ -111,4 +111,5 @@ const isWeChat = () => /MicroMessenger/i.test(window.navigator.userAgent);
 if (isWeChat()) {
     // button.style.display = "none";
     document.querySelector("#wechat").style.display = "block";
+    alert("Is WeChat");
 }
