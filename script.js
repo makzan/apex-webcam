@@ -96,14 +96,7 @@ const constraints = {
   audio: false,
   video: {width: {exact: 1920}, height: {exact: 1080}},
 };
-// Un-comment the following code with caution. It starts camera access right away.
-const video = document.querySelector('video#user-media');
-navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-  video.srcObject = stream
-  let {width, height} = stream.getTracks()[0].getSettings();
-  debugLog(width);
-  debugLog(height);
-});
+
 
 
 
@@ -112,4 +105,13 @@ if (isWeChat()) {
     // button.style.display = "none";
     document.querySelector("#wechat").style.display = "block";
     alert("Is WeChat");
+} else {
+  // Un-comment the following code with caution. It starts camera access right away.
+  const video = document.querySelector('video#user-media');
+  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+    video.srcObject = stream
+    let {width, height} = stream.getTracks()[0].getSettings();
+    debugLog(width);
+    debugLog(height);
+  });
 }
